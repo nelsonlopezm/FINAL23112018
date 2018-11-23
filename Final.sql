@@ -71,3 +71,38 @@ BEGIN
     END IF;
     
 END;
+
+
+
+
+
+CREATE TYPE number_array AS VARRAY(50) OF INTEGER
+return number IS
+Input : N = 10
+Output : -2,-3,4,-1,-2,1,5,-3
+Input : N = 7
+Output :4,-1,-2,1,5 
+  
+BEGIN
+ for (int i = 1; i <= N; i++) 
+        product = a[i - 1] / 10;
+     
+        if (product == 0)
+            product = 1;
+        else
+            product = a[i - 1] % 10;
+     
+        int val = a[i - 1] / 10;
+     
+        if (val == 0)
+            val = a[i - 1];
+     
+        a[i] = a[i - 1] + (val * product);    
+END;
+
+BEGIN
+    dbms_output.put_line('MIN 20 - 40: ' || number_array(20,40));
+END;
+
+
+
